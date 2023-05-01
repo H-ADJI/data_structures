@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define DS "stack"
-#define SIZE 10
+#define SIZE 5
 
 typedef struct stack
 {
@@ -68,16 +68,4 @@ void repr(stack *st)
     for (int i = 0; i < 10; i++)
         printf("%d ", st->items[i]);
     printf("\n");
-}
-int main()
-{
-
-    stack *st = create_stack();
-    push(1, st);
-    printf("%d\n", peek(st));
-    push(2, st);
-    printf("%d\n", peek(st));
-    int el = pop(st);
-    printf("%d\n", peek(st));
-    free(st);
 }
