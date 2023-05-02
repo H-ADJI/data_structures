@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include "queue.h"
-#include "stack.h"
-#include "linked_list.h"
+#include "headers/queue.h"
+#include "headers/stack.h"
+#include "headers/linked_list.h"
 
 int main(void)
 {
