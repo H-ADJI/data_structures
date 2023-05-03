@@ -1,5 +1,5 @@
 CC=gcc
-all: build clean run
+all: build run clean
 run: data_structures
 	./data_structures
 build: main.o stack.o queue.o linked_list.o
@@ -13,4 +13,4 @@ linked_list:  linked_list.c
 queue:  queue.c
 	$(CC) -c queue.c
 clean :
-	rm -f *.o
+	rm -f *.o data_structures
