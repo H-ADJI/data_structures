@@ -12,7 +12,22 @@ typedef struct linked_list
     node *head;
     int length;
 } linked_list;
-
+void repr_linked_list(linked_list *list)
+{
+    node *next_node = list->head;
+    printf("\n");
+    printf("\n");
+    while (next_node != NULL)
+    {
+        printf(" --> ");
+        printf("%d", next_node->data);
+        // printf(" | ");
+        // printf("%p", next_node->next);
+        next_node = next_node->next;
+    }
+    printf("\n");
+    printf("\n");
+}
 // traverse the list and return the last element
 node *traverse(linked_list *list, int until)
 {
@@ -133,13 +148,14 @@ void sort(linked_list *list)
     if (list->length < 2)
         printf("the list is already sorted");
 
-    int visited = list->length;
+    int visited = list->length - 1;
     while (visited > 0)
     {
+        int flag = 0;
         node *current = list->head;
         node *next = current->next;
         node *previous = NULL;
-
+        repr_linked_list(list);
         visited--;
         while (next != NULL)
         {
@@ -163,6 +179,7 @@ void sort(linked_list *list)
                 //  in case of swap the previous element become what was the next element (before swap)
                 previous = next;
                 next = current->next;
+                flag++;
             }
             else
             {
@@ -171,21 +188,8 @@ void sort(linked_list *list)
                 next = next->next;
             }
         }
+        // track if there is no swap then list is sorted
+        if (flag == 0)
+            break;
     }
-}
-void repr_linked_list(linked_list *list)
-{
-    node *next_node = list->head;
-    printf("\n");
-    printf("\n");
-    while (next_node != NULL)
-    {
-        printf(" --> ");
-        printf("%d", next_node->data);
-        printf(" | ");
-        printf("%p", next_node->next);
-        next_node = next_node->next;
-    }
-    printf("\n");
-    printf("\n");
 }

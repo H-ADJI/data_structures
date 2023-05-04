@@ -15,7 +15,7 @@ int main(void)
     search(1, list);
     append(2, list);
     append(5, list);
-    repr_linked_list(list);
+    // repr_linked_list(list);
     sort(list);
-    repr_linked_list(list);
+    // repr_linked_list(list);
 }
