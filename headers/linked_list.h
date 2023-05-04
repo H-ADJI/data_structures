@@ -18,4 +18,5 @@ void insert(int position, int element, linked_list *list);
 void append(int element, linked_list *list);
 void delete(int element, linked_list *list);
 int search(int element, linked_list *list);
+void sort(linked_list *list);
 void repr_linked_list(linked_list *list);

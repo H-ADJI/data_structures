@@ -130,6 +130,48 @@ int search(int element, linked_list *list)
 }
 void sort(linked_list *list)
 {
+    if (list->length < 2)
+        printf("the list is already sorted");
+
+    int visited = list->length;
+    while (visited > 0)
+    {
+        node *current = list->head;
+        node *next = current->next;
+        node *previous = NULL;
+
+        visited--;
+        while (next != NULL)
+        {
+            if (current->data > next->data)
+            {
+                //  swap current and next
+                if (previous == NULL)
+                // case where we are at the list head
+                {
+                    current->next = next->next;
+                    next->next = current;
+                    list->head = next;
+                }
+                else
+                // case where we are in the middle of the list
+                {
+                    previous->next = next;
+                    current->next = next->next;
+                    next->next = current;
+                }
+                //  in case of swap the previous element become what was the next element (before swap)
+                previous = next;
+                next = current->next;
+            }
+            else
+            {
+                previous = current;
+                current = next;
+                next = next->next;
+            }
+        }
+    }
 }
 void repr_linked_list(linked_list *list)
 {
