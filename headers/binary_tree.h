@@ -1,11 +1,12 @@
-typedef struct node
+typedef struct tree_node
 {
     int data;
-    struct node *left;
-    struct node *right;
-} node;
+    struct tree_node *left;
+    struct tree_node *right;
+} tree_node;
 
 typedef struct binary_tree
 {
-    node *root;
+    tree_node *root;
 } binary_tree;
+binary_tree *create_binary_tree(int data);
