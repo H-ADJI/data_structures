@@ -21,3 +21,28 @@ binary_tree *create_binary_tree(int data)
     tree->root = root;
     return tree;
 }
+
+tree_node *insert_left(tree_node *node, int value)
+{
+    tree_node *left_node = malloc(sizeof(tree_node));
+    node->left = left_node;
+    left_node->data = value;
+    return left_node;
+}
+
+tree_node *insert_right(tree_node *node, int value)
+{
+    tree_node *right_node = malloc(sizeof(tree_node));
+    node->left = right_node;
+    right_node->data = value;
+    return right_node;
+}
+void inorder_traversal(binary_tree *tree)
+{
+}
+void preorder_traversal(binary_tree *tree)
+{
+}
+void postorder_traversal(binary_tree *tree)
+{
+}
