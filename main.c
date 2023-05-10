@@ -7,5 +7,7 @@
 
 int main(void)
 {
-    binary_tree *tree = create_binary_tree(5);
+    binary_tree *tree = create_binary_tree(1);
+
+    printf("depth: %d \n", get_tree_height(tree->root));
 }
